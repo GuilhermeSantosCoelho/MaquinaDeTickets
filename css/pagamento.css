@@ -1,0 +1,82 @@
+.corpoMaquina{
+	background-color: white;
+	opacity: 1;
+}
+
+.corpoMaquina .telaMaquina{
+	min-width: 800px;
+	height: 500px;
+	border: 2px #666666 solid;
+	border-radius: 5px;
+	float: left;
+	text-align: center;
+	margin-left: 5%;
+	margin-top: 5%;
+	background-color: #dedede;
+}
+
+body{
+	background: url("../images/fund.jpg");
+}
+
+.telaMaquina h5{
+	margin-top: 28%;
+}
+
+.maquina{
+	height: 400px;
+	border: 2px black solid;
+	border-radius: 10px;
+	width: 280px;
+	float: left;
+	margin-top: 7%;
+	margin-left: 5%;
+	background-color: black;
+}
+
+.maquina .tela{
+	height: 100px;
+	border: 2px black solid;
+	border-radius: 5px;
+	width: 80%;
+	margin: 0px auto;
+	margin-top: 19px;
+	background-color: #72cf75;
+	opacity: 0.7;
+	padding-left: 10px;
+	font-size: 10px;
+}
+
+.maquina .botoes{
+	margin: 0px auto;
+	width: 90%;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.maquina .botoes .botao{
+	height: 30px;
+	margin: 10px;
+	padding-top: 6px;
+	display: inline-block;
+	border-radius: 5px;
+	width: 20%;
+	color: white;
+	cursor: pointer;
+}
+
+.botaoNumero{
+	background-color: #5c5c5c;
+	box-shadow: 2px 3px 4px 1px #5c5c5c;
+	border: 2px #3d3d3d solid;
+}
+
+.botaoConfirma{
+	background-color: #34d166;
+	box-shadow: 2px 3px 4px 1px #12b044;
+}
+
+.botaoCancela{
+	background-color: #e63939;
+	box-shadow: 2px 3px 4px 1px #d41616;
+}

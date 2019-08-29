@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comprar</title>
+	<link rel="stylesheet" type="text/css" href="css/comprar.css">
+	<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase.js"></script>
+	<script type="text/javascript" src="firebase/config.js"> </script>
+	<script type="text/javascript" src="js/comprar.js"> </script>
+</head>
+<body>
+	<h2 id="nomeFilme"></h2>
+	<h2 id="detalhesFilme"></h2>
+	<div class="divContent">
+		<div class="divIngresso">
+			<h3>Meia</h3>
+			<h1 id="numIngressosMeia" class="numIngressos">
+				0
+			</h1>
+			<button onclick="removerIngresso('numIngressosMeia')" class="botaoQuantidadeMenos">-</button>
+			<button onclick="adicionarIngresso('numIngressosMeia')" class="botaoQuantidadeMais">+</button>
+		</div>
+		<div class="divIngresso">
+			<h3>Inteira</h3>
+			<h1 id="numIngressosInteira" class="numIngressos">
+				0
+			</h1>
+			<button onclick="removerIngresso('numIngressosInteira')" class="botaoQuantidadeMenos">-</button>
+			<button onclick="adicionarIngresso('numIngressosInteira')" class="botaoQuantidadeMais">+</button>
+		</div>
+		<br><br>
+		<button class="botaoFinalizarCompra" onclick="finalizarCompra()">Finalizar</button>
+	</div>
+	
+</body>
+</html>

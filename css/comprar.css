@@ -1,0 +1,63 @@
+body{
+	text-align: center;
+}
+
+.divIngresso{
+	width: auto;
+	max-width: 200px;
+	border: 1px black solid;
+	height: 300px;
+	margin: 0px auto;
+	display: inline-block;
+	border-radius: 5px;
+	margin-left: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+	box-shadow: 4px 3px 6px 1px gray;
+}
+
+.divContent{
+	width: 80%;
+	margin: 0px auto;
+	align-items: center;
+}
+
+.numIngressos{
+ 	font-size: 60px;
+ 	margin-top: 60px;
+}
+
+.botaoQuantidadeMenos{
+	border-radius: 20px;
+	width: 25px;
+	height: 25px;
+	border-style: none;
+	background-color: #b84b4b;
+	margin-right: 50px;
+	margin-top: 30px;
+}
+
+.botaoQuantidadeMais{
+	border-radius: 20px;
+	width: 25px;
+	height: 25px;
+	border-style: none;
+	background-color: #4bb85a;
+}
+
+.botaoFinalizarCompra{
+	width: 100px;
+	height: 40px;
+	border-radius: 5px;
+	background: #3093c2;
+	color: white;
+	border-style: none;
+	font-size: 16px;
+	box-shadow: 4px 3px 6px 1px #1f6080;
+	cursor: pointer;
+}
+
+.botaoFinalizarCompra:active{
+	box-shadow:0px 0px 0px 0px;
+	transition: 0.3s;
+}

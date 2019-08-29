@@ -1,0 +1,38 @@
+.divCartazes{
+	margin: 0px auto;
+	width: 80%;
+}
+
+body{
+	font-family: "Courier New", Courier, monospace;
+	font-size: 13px;
+	text-align: center;
+}
+
+.titulo{
+	color: #2591b0;
+	font-size: 45px;
+}
+
+.divCartaz{
+	border: 1px black solid;
+	max-width:250px;
+	border-radius: 5px;
+	box-shadow: 0 0 2em black;
+	display: inline-grid;
+	margin-left: 20px;
+	margin-top: 0px;
+	cursor: pointer;
+	height: 400px;
+}
+
+.imagemFilme{
+	width: 250px;
+	border-radius: 9px 9px 0px 0px;
+	height: 310px;
+}
+
+h4{
+	margin-top: 10px;
+	margin-left: 5px;
+}

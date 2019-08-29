@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagamento</title>
+	<link rel="stylesheet" type="text/css" href="css/pagamento.css"/>
+	<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase.js"></script>
+	<script type="text/javascript" src="firebase/config.js"> </script>
+	<script type="text/javascript" src="js/pagamento.js"></script>
+</head>
+<body>
+	<div class="corpoMaquina">
+		<div class="telaMaquina">
+			<h5>Aguardando pagamento...</h5>
+		</div>
+	</div>
+	<div class="maquina">
+		<div class="tela">
+			<h2>Selecionado: Débito</h2>
+			<h2>Total: R$ <label id="precoTotal"></label></h2>
+			<h2>Senha: <label id="senhaLabel"></label></h2>
+		</div>
+		<div class="botoes">
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">1</div> 
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">2</div> 
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">3</div> <br>
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">4</div> 
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">5</div> 
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">6</div> <br>
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">7</div> 
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">8</div> 
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">9</div> <br>
+			<div class="botao botaoCancela" onclick="cancelarPagamento()">X</div> 
+			<div class="botao botaoNumero" onclick="digitarSenha(this)">0</div> 
+			<div class="botao botaoConfirma" onclick="finalizarPagamento()">></div> <br>
+		</div>
+	</div>
+</body>
+</html>
