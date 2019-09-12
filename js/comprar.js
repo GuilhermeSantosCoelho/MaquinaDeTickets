@@ -23,7 +23,15 @@ if(filme == null){
             sessionStorage.setItem("cliente", codigo[1]);
             window.location = "assentos.html";
         }else{
-            alert("Nenhum ingresso selecionado!");
+            var alerta = document.getElementById("alerta");
+            alerta.style.paddingTop = "8px";
+            alerta.style.height = "50px";
+            alerta.innerHTML = "Nenhum ingresso selecionado!";
+            setTimeout(function () {
+                alerta.innerHTML = "";
+                alerta.style.paddingTop = "0px";
+                alerta.style.height = "0px";
+            }, 3000);
         }
     }
 

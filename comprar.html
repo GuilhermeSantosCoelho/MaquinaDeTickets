@@ -2,12 +2,18 @@
 <html>
 <head>
 	<title>Comprar</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/comprar.css">
 	<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase.js"></script>
 	<script type="text/javascript" src="firebase/config.js"> </script>
 	<script type="text/javascript" src="js/comprar.js"> </script>
 </head>
 <body>
+	<div id="alerta"></div>
 	<h2 id="nomeFilme"></h2>
 	<h2 id="detalhesFilme"></h2>
 	<div class="divContent">
@@ -16,19 +22,19 @@
 			<h1 id="numIngressosMeia" class="numIngressos">
 				0
 			</h1>
-			<button onclick="removerIngresso('numIngressosMeia')" class="botaoQuantidadeMenos">-</button>
-			<button onclick="adicionarIngresso('numIngressosMeia')" class="botaoQuantidadeMais">+</button>
+			<button onclick="removerIngresso('numIngressosMeia')" class="btn btn-lg btn-block btn-primary botaoRemover">Remover</button>
+			<button onclick="adicionarIngresso('numIngressosMeia')" class="btn btn-lg btn-block btn-primary botaoAdicionar">Adicionar</button>
 		</div>
 		<div class="divIngresso">
 			<h3>Inteira</h3>
 			<h1 id="numIngressosInteira" class="numIngressos">
 				0
 			</h1>
-			<button onclick="removerIngresso('numIngressosInteira')" class="botaoQuantidadeMenos">-</button>
-			<button onclick="adicionarIngresso('numIngressosInteira')" class="botaoQuantidadeMais">+</button>
+			<button onclick="removerIngresso('numIngressosInteira')" class="btn btn-lg btn-block btn-primary botaoRemover">Remover</button>
+			<button onclick="adicionarIngresso('numIngressosInteira')" class="btn btn-lg btn-block btn-primary botaoAdicionar">Adicionar</button>
 		</div>
 		<br><br>
-		<button class="botaoFinalizarCompra" onclick="finalizarCompra()">Finalizar</button>
+		<button class="btn btn-lg btn-block btn-primary botaoFinalizarCompra" onclick="finalizarCompra()">Finalizar</button>
 	</div>
 	
 </body>

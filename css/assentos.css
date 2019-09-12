@@ -1,7 +1,9 @@
 body{
-	font-family: "Courier New", Courier, monospace;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 	font-size: 13px;
 	text-align: center;
+	background-color: #212529;
+	color: #fff;
 }
 
 .divContent{
@@ -26,9 +28,21 @@ body{
 	left: 0;
 }
 
+#alerta{
+	height: 0px;
+	color: #212529;
+	background-color: #fff;
+	margin: 0px auto;
+	z-index: 1001;
+	font-size: 20px;
+	width: 40%;
+	border-radius: 0px 0px 5px 5px;
+	transition: 0.7s;
+}
+
 .tela{
-	width: 20%;
-	border: 3px black solid;
+	width: 14%;
+	border: 3px rgb(156, 156, 156) solid;
 	margin: 0px auto;
 }
 
@@ -38,16 +52,17 @@ body{
 }
 
 .letraAssento{
-	width: 40px;
+	width: 10px;
 	display: inline-flex;
 	font-size: 22px;
+	margin-right: 10px;
 }
 
 .numeroAssento{
 	font-size: 22px;
-	margin-left: 47px;
-	margin-right: 5px;
-	padding-bottom: 20px;
+	margin-left: 33px;
+	margin-right: 16px;
+	padding-bottom: 0px;
 }
 
 .assento{
@@ -63,7 +78,7 @@ body{
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-bottom: 0px;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .botao{

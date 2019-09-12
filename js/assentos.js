@@ -2,16 +2,16 @@ var letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
 var clienteKey = sessionStorage.getItem("cliente");
 var refCliente = firebase.database().ref("Clientes/-" + sessionStorage.getItem("cliente"));
 
-if(clienteKey == null){
+if (clienteKey == null) {
     window.location = "index.html";
-}else{
+} else {
     refCliente.once("value").then(function (snapshot) {
         var refFilme = firebase.database().ref("Filmes/" + snapshot.child("filme").val());
         var refSalas = firebase.database().ref("Salas/" + snapshot.child("sala").val());
         var refCadeiras = firebase.database().ref("CadeirasOcupadas/" + snapshot.child("filme").val());
         var refCadeirasSelecionadas = firebase.database().ref("CadeirasSelecionadas/" + snapshot.child("filme").val());
 
-        refFilme.once("value").then(function(snapshot){
+        refFilme.once("value").then(function (snapshot) {
             document.getElementById('nomeFilme').innerHTML = snapshot.child("nome").val();
             document.getElementById('detalhesFilme').innerHTML = "Duração: " + calcularDuracao(snapshot.child("duracao").val());
         });
@@ -56,7 +56,7 @@ if(clienteKey == null){
                     console.log(cadeira);
                 });
             } else {
-                console.log("Nenhuma cadeira ocupada.");
+                alerta("Nenhuma cadeira ocupada.");
             }
         });
 
@@ -80,19 +80,18 @@ if(clienteKey == null){
                                 refCadeirasSelecionadas.remove().then(function () {
                                     document.getElementById(cadeira.id).style.backgroundColor = "#2de089";
                                     ingressos += 1;
-                                    console.log(ingressos);
                                     refCliente.child("quantidadeIngressos").set(ingressos);
                                 });
                             } else {
-                                console.log("Cadeira ocupada!");
+                                alerta("Cadeira ocupada!");
                             }
                         }
                     });
                 } else {
-                    console.log("Cadeira ocupada!");
+                    alerta("Cadeira ocupada!");
                 }
             });
-            
+
         });
     }
 
@@ -108,14 +107,14 @@ if(clienteKey == null){
         });
     }
 
-    function cancelarComprar(){
+    function cancelarComprar() {
         refCliente.once("value").then(function (snapshot) {
             var sala = snapshot.child("sala").val();
             var refCadeirasSelecionadas = firebase.database().ref("CadeirasSelecionadas/" + filme);
 
             refCadeirasSelecionadas.once("value").then(function (snapshot) {
                 snapshot.forEach(function (childSnapshot) {
-                    if(childSnapshot.child("cliente").val() == clienteKey){
+                    if (childSnapshot.child("cliente").val() == clienteKey) {
                         var cadeira = childSnapshot.key;
                         refCadeirasSelecionadas.child(cadeira).remove();
                     }
@@ -127,13 +126,13 @@ if(clienteKey == null){
         });
     }
 
-    function finalizarCompra(){
+    function finalizarCompra() {
         refCliente.once("value").then(function (snapshot) {
             var quantidadeIngressos = snapshot.child("quantidadeIngressos").val();
 
-            if(quantidadeIngressos != 0){
-                alert("Você não selecionou todas as cadeiras.");
-            }else{
+            if (quantidadeIngressos != 0) {
+                alerta("Você não selecionou todas as cadeiras.");
+            } else {
                 window.location = "pagamento.html";
             }
         });
@@ -146,9 +145,21 @@ if(clienteKey == null){
             resultado += 1;
             duracao -= 60;
         }
-        return resultado + "h" + (duracao < 10 ? "0" + duracao  + "min" : duracao + "min");
+        return resultado + "h" + (duracao < 10 ? "0" + duracao + "min" : duracao + "min");
     }
-      
+
+}
+
+function alerta(texto) {
+    var alerta = document.getElementById("alerta");
+    alerta.style.paddingTop = "8px";
+    alerta.style.height = "50px";
+    alerta.innerHTML = texto;
+    setTimeout(function () {
+        alerta.innerHTML = "";
+        alerta.style.paddingTop = "0px";
+        alerta.style.height = "0px";
+    }, 3000);
 }
 
 
