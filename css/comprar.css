@@ -47,13 +47,14 @@ body{
 
 .numIngressos{
  	font-size: 60px;
- 	margin-top: 60px;
+	 margin-top: 40px;
+	 padding-bottom: 20px;
 }
 
 .botaoRemover{
 	border-radius: 20px;
 	border-style: none;
-	background-color: #b84b4b;
+	background-color: #ff3636;
 	margin-right: 50px;
 	margin-top: 30px;
 	font-size: 12px;
@@ -63,7 +64,7 @@ body{
 	border-radius: 20px;
 	border-style: none;
 	font-size: 12px;
-	background-color: #4bb85a;
+	background-color: hsl(129, 64%, 53%);
 }
 
 .botaoFinalizarCompra{

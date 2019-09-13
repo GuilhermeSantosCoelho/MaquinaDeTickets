@@ -15,8 +15,25 @@
 	background-color: #dedede;
 }
 
+#alerta{
+	height: 0px;
+	color: #212529;
+	background-color: #fff;
+	margin: 0px auto;
+	z-index: 1001;
+	font-size: 20px;
+	width: 40%;
+	border-radius: 0px 0px 5px 5px;
+	transition: 0.7s;
+	text-align: center;
+}
+
 body{
-	background: url("../images/fund.jpg");
+	margin-top: 0px;
+	text-align: left;
+	background-color: #212529;
+	color: black;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 .telaMaquina h5{
@@ -24,7 +41,7 @@ body{
 }
 
 .maquina{
-	height: 400px;
+	height: 410px;
 	border: 2px black solid;
 	border-radius: 10px;
 	width: 280px;
@@ -35,7 +52,7 @@ body{
 }
 
 .maquina .tela{
-	height: 100px;
+	height: 110px;
 	border: 2px black solid;
 	border-radius: 5px;
 	width: 80%;

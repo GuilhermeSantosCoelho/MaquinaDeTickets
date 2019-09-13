@@ -1,4 +1,3 @@
-var letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
 var clienteKey = sessionStorage.getItem("cliente");
 var refCliente = firebase.database().ref("Clientes/-" + sessionStorage.getItem("cliente"));
 
@@ -14,7 +13,7 @@ if (clienteKey == null) {
             var precoMeia = snapshot.child("Meia").val();
             var precoInteira = snapshot.child("Inteira").val();
             precoTotal = (calcularPreco(ingressosMeia, precoMeia) + calcularPreco(ingressosInteira, precoInteira));
-            document.getElementById('precoTotal').innerHTML = precoTotal + ",00";
+            document.getElementById('precoTotal').innerHTML = "R$" + precoTotal + ",00";
         });
     });
 
@@ -39,7 +38,7 @@ function cancelarPagamento() {
 
         refCadeirasSelecionadas.once("value").then(function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
-                if(childSnapshot.child("cliente").val() == clienteKey){
+                if (childSnapshot.child("cliente").val() == clienteKey) {
                     var cadeira = childSnapshot.key;
                     refCadeirasSelecionadas.child(cadeira).remove();
                 }
@@ -55,10 +54,21 @@ function finalizarPagamento() {
     var senha = document.getElementById('senhaLabel').innerHTML.toString();
 
     if (senha.length != 4) {
-        alert("A senha deve possuir 4 caracteres.");
-    }else{
+        alerta("A senha deve possuir 4 caracteres.");
+    } else {
         refCliente.child("pago").set(1);
         window.location = "ingressos.html";
     }
 }
 
+function alerta(texto) {
+    var alerta = document.getElementById("alerta");
+    alerta.style.paddingTop = "8px";
+    alerta.style.height = "50px";
+    alerta.innerHTML = texto;
+    setTimeout(function () {
+        alerta.innerHTML = "";
+        alerta.style.paddingTop = "0px";
+        alerta.style.height = "0px";
+    }, 3000);
+}

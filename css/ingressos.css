@@ -1,5 +1,29 @@
 body{
     font-family: "Courier New", Courier, monospace;
+    background-color: #212529;
+    text-align: center;
+}
+
+#titulo{
+    color: #fff;
+    text-align: center;
+}
+
+#retirarIngressos{
+    background-color: #007bff;
+    width: 120px;
+    height: 50px;
+    margin: 0px auto;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px#007bff solid;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+#retirarIngressos:hover{
+    background-color: #0069d9;
 }
 
 #ingressos{

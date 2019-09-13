@@ -11,12 +11,12 @@ if (clienteKey == null) {
         var refCadeirasSelecionadas = firebase.database().ref("CadeirasSelecionadas/" + snapshot.child("filme").val());
 
         refFilme.once("value").then(function (filmeSnapshot){
+            if(!filmeSnapshot.exists()) window.location = "index.html";
             var filme = filmeSnapshot.child("nome").val();
             var filmeData = filmeSnapshot.child("data").val();
             var filmeHora = filmeSnapshot.child("hora").val();
             refCadeirasSelecionadas.once("value").then(function (cadeirasSelecionadasSnapshot){
                 cadeirasSelecionadasSnapshot.forEach(function (cadeira){
-                    console.log("asdasd");
                     if(cadeira.child("cliente").val() == clienteKey){
                         firebase.database().ref("CadeirasOcupadas/" + filmeSnapshot.key).child(cadeira.key).set({ cliente:clienteKey });
                         document.getElementById("ingressos").innerHTML += 
@@ -31,7 +31,13 @@ if (clienteKey == null) {
                     }
                 });
                 refCliente.remove();
+                document.getElementById('titulo').innerHTML = 'Obrigado pela compra!';
+                document.getElementById('retirarIngressos').style.display = 'block';
             });
         });
     });
+}
+
+function retirarIngressos(){
+    window.location = "index.html";
 }
